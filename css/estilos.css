@@ -24,6 +24,29 @@
 
 /*<---------------------------------------------------------------------------- ETIQUETAS GENERALES ----------------------------------------------------------------------------------------------->*/
 
+@-webkit-keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  @keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+
+
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -254,7 +277,6 @@ body{
     font-size: 1.38rem;
     display: flex;
     align-items: center;
-    padding-top: 0.4rem;
     margin-left: 4rem;
     
 }
@@ -280,6 +302,11 @@ body{
     padding-right: 50px;
     padding-left: 50px;
     transition: all 0.5s;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     
     
 }
@@ -288,6 +315,14 @@ body{
     
     opacity: 0.3;
     transform: scale(1.1);
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 
 }
 
@@ -369,6 +404,13 @@ body{
     height: 2rem;
     text-align: center;
     justify-content: center;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     
 }
 .footer .contenedor-social ul li .fa-brands{
@@ -383,7 +425,10 @@ body{
 }
 
 .footer .contenedor-social ul li:hover{
-    box-shadow:  2px 2px 30px black;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 .footer .derechos{
@@ -399,11 +444,11 @@ body{
 /*<-------------------------------------------------------------------------- ASIDES---------------------------->*/
 
 .aside1-equipo{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 .aside2-equipo{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 
@@ -480,11 +525,11 @@ font-size: 1.2rem;
 /*<-------------------------------------------------------------------------- ASIDES---------------------------->*/
 
 .aside1-servicios{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 .aside2-servicios{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 
@@ -593,11 +638,11 @@ font-size: 1.2rem;
 /*<-------------------------------------------------------------------------- ASIDES---------------------------->*/
 
 .aside1-nosotros{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 .aside2-nosotros{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 
@@ -668,11 +713,11 @@ font-size: 2rem;
 /*<-------------------------------------------------------------------------- ASIDES---------------------------->*/
 
 .aside1-contacto{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 .aside2-contacto{
-    background-image: url(../assets/fondos/Esquina.jpeg);
+    background-image: url(../assets/fondos/esquina.jpeg);
     background-size: cover;
 }
 
@@ -702,7 +747,15 @@ font-size: 2rem;
     width: 100%;
     font-size: 1.1rem;
     margin-left: 0.7rem;
-    
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+
+}
+
+.formulario div #userMail{
+    position: relative;
+    left: 0.36rem;
 }
 .newslatter_txt {
     font-size: 1rem;
@@ -806,7 +859,7 @@ font-size: 2rem;
         width: 100%;
     }
 
-     /*<------ NOSOTROS EN TABLETS ---------->*/
+    /*<------ NOSOTROS EN TABLETS ---------->*/
 
     .main-nosotros .nosotros .parrafo-nosotros{
         position: relative;
@@ -832,6 +885,13 @@ font-size: 2rem;
         width: 35vw;
         text-align: center;
         
+    }
+
+    /*<------ CONTACTO EN TABLETS ---------->*/
+
+    .formulario div #userMail{
+        position: relative;
+        left: 0px;
     }
 }
   
